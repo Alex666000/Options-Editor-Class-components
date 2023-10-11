@@ -28,6 +28,7 @@
     "import/no-duplicates": "warn",
     "import/first": "warn",
     "no-alert": "error",
+    "object-curly-spacing": ["error", "always"],
     "unused-imports/no-unused-imports": "error",
     "react/no-unused-prop-types": "off",
     "react/destructuring-assignment": "warn",
