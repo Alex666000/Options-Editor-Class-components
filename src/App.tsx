@@ -1,15 +1,15 @@
-import {Component, CSSProperties} from 'react';
+import { Component, CSSProperties } from 'react';
 
 // data
 const params: Param[] = [
-    {id: 1, name: 'Назначение', type: 'string'},
-    {id: 2, name: 'Длина', type: 'string'},
+    { id: 1, name: 'Назначение', type: 'string' },
+    { id: 2, name: 'Длина', type: 'string' },
 ];
 
 const initialModel: Model = {
     paramValues: [
-        {paramId: 1, value: 'повседневное'},
-        {paramId: 2, value: 'макси'},
+        { paramId: 1, value: 'повседневное' },
+        { paramId: 2, value: 'макси' },
     ],
 };
 
@@ -18,7 +18,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <ParamEditor params={params} model={initialModel}/>
+                <ParamEditor params={params} model={initialModel} />
             </div>
         );
     }
@@ -80,21 +80,19 @@ class ParamEditor extends Component<Props, State> {
         super(props);
         this.state = {
             editedModel: {
-                paramValues: [...props.model.paramValues]
+                paramValues: [...props.model.paramValues],
             },
         };
     }
 
     updateParamValue = (paramId: number, value: string) => {
-        const {editedModel} = this.state;
+        const { editedModel } = this.state;
 
-        const paramValueIndex = editedModel.paramValues.findIndex(
-            (paramValue) => paramValue.paramId === paramId
-        );
+        const paramValueIndex = editedModel.paramValues.findIndex(paramValue => paramValue.paramId === paramId);
 
         if (paramValueIndex !== -1) {
-            editedModel.paramValues[paramValueIndex] = {paramId, value};
-            this.setState({editedModel});
+            editedModel.paramValues[paramValueIndex] = { paramId, value };
+            this.setState({ editedModel });
         }
     };
 
@@ -103,27 +101,22 @@ class ParamEditor extends Component<Props, State> {
     };
 
     render() {
-        const {editedModel} = this.state;
+        const { editedModel } = this.state;
 
         return (
             <div style={containerStyle}>
-                {params.map((param) => (
+                {params.map(param => (
                     <div key={param.id} style={inputContainerStyle}>
-                        <label
-                            style={labelStyle}
-                            htmlFor={`input-${param.id}`}
-                        >
+                        <label style={labelStyle} htmlFor={`input-${param.id}`}>
                             {param.name}
                         </label>
                         <input
                             type="text"
                             id={`input-${param.id}`}
                             value={
-                                editedModel.paramValues.find(
-                                    (paramValue) => paramValue.paramId === param.id
-                                )?.value || ''
+                                editedModel.paramValues.find(paramValue => paramValue.paramId === param.id)?.value || ''
                             }
-                            onChange={(e) => this.updateParamValue(param.id, e.target.value)}
+                            onChange={e => this.updateParamValue(param.id, e.target.value)}
                         />
                     </div>
                 ))}
@@ -141,7 +134,3 @@ class ParamEditor extends Component<Props, State> {
         );
     }
 }
-
-
-
-

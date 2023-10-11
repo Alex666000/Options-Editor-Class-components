@@ -28,7 +28,7 @@
     "import/no-duplicates": "warn",
     "import/first": "warn",
     "no-alert": "error",
-    "prettier/prettier": "off", // Обязательно!! Подсвечивает ошибки из Prettier.
+    "prettier/prettier": "error", // Обязательно!! Подсвечивает ошибки из Prettier.
     "unused-imports/no-unused-imports": "error",
     "react/no-unused-prop-types": "off",
     "react/destructuring-assignment": "warn",
