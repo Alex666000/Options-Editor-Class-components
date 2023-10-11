@@ -1,0 +1,91 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "react-app",
+    "react-app/jest",
+    "prettier",
+    "prettier/prettier",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": [
+    "react",
+    "prettier",
+    "react-hooks",
+    "unused-imports",
+    "ulbi-tv-plugin"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-plusplus": "error",
+    "import/no-duplicates": "warn",
+    "import/first": "warn",
+    "no-alert": "error",
+    "prettier/prettier": "off", // Обязательно!! Подсвечивает ошибки из Prettier.
+    "unused-imports/no-unused-imports": "error",
+    "react/no-unused-prop-types": "off",
+    "react/destructuring-assignment": "warn",
+    "react/prefer-stateless-function": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "warn",
+    "react/require-default-props": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/function-component-definition": "off",
+    "no-shadow": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-underscore-dangle": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "max-classes-per-file": "warn",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "react-hooks/exhaustive-deps": "error",
+    "react/jsx-indent": [
+      2,
+      4
+    ],
+    "react/jsx-indent-props": [
+      2,
+      4
+    ],
+    "indent": [
+      2,
+      4
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 150,
+        "ignoreComments": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/src/**/*.{spec,test,stories}.{ts,tsx,js,jsx}"
+      ],
+      "rules": {
+        "max-len": "off"
+      }
+    }
+  ]
+}
